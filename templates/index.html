@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+    To Do List
+{% endblock %}
+{% block menu %}
+
+{% endblock %}
+
+{% block content %}
+    {% for task in tasks %}
+        {% if task.status.title == 'New' %}
+            <div class="alert alert-danger" role="alert">
+                <a href="{% url 'task_detail' task.pk %}" class="alert-link" style="text-decoration: none; font-weight: normal">{% include 'tasks.html' %}</a>
+            </div>
+        {% elif task.status.title == 'In Process' %}
+            <div class="alert alert-warning" role="alert">
+                <a href="{% url 'task_detail' task.pk %}" class="alert-link" style="text-decoration: none; font-weight: normal">{% include 'tasks.html' %}</a>
+            </div>
+        {% elif task.status.title == 'Completed' %}
+            <div class="alert alert-success" role="alert">
+                <a href="{% url 'task_detail' task.pk %}" class="alert-link" style="text-decoration: none; font-weight: normal">{% include 'tasks.html' %}</a>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
