@@ -53,3 +53,12 @@ def update_view(request, pk):
     return render(request, 'task_update.html', {'form': form, 'task': task})
 
 
+def delete_view(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    if request.method == 'POST':
+        task.delete()
+        return redirect('index')
+    context = {
+        'task': task,
+    }
+    return render(request, 'task_delete.html', context)

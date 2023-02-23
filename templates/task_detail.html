@@ -9,6 +9,7 @@
             <p class="card-text">{{ task.details }}</p>
             <a href="{% url 'index' %}" class="btn btn-primary">Go back</a>
             <a href="{% url 'task_update' task.pk %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'task_delete' task.pk %}" class="btn btn-danger">Delete</a>
         </div>
     </div>
 {% endblock %}
