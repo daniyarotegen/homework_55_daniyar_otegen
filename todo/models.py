@@ -14,7 +14,7 @@ class Task(models.Model):
     status = models.CharField(
         max_length=20, choices=StatusChoice.choices, default=StatusChoice.NEW, verbose_name='status'
     )
-    completion_date = models.DateField(null=True, blank=True, verbose_name='completion time')
+    completion_date = models.DateField(null=True, blank=True, verbose_name='completion date')
 
     def __str__(self):
         return f'{self.description} = {self.status}'
