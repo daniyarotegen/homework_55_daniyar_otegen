@@ -8,6 +8,7 @@
             <h5 class="card-title">{{ task.description }}</h5>
             <p class="card-text">{{ task.details }}</p>
             <a href="{% url 'index' %}" class="btn btn-primary">Go back</a>
+            <a href="{% url 'task_update' task.pk %}" class="btn btn-primary">Edit</a>
         </div>
     </div>
 {% endblock %}
