@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
+{% block title %}
+    Mass Delete Tasks
+{% endblock %}
 {% block content %}
-  <h1>Mass Delete Tasks</h1>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-danger">Delete</button>
-  </form>
+    <h2 style="margin-top: 1rem">Mass Delete Tasks</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
 {% endblock %}

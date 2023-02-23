@@ -1,3 +1,12 @@
+{% load bootstrap5 %}
 {% csrf_token %}
-{{ form.as_p }}
-<button type="submit" class="btn btn-primary">{{ button_text }}</button>
+{% bootstrap_form form %}
+{#{{ form.as_p }}#}
+<div class="form_row">
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            {{ button_text }}
+        </button>
+    {% endbuttons %}
+</div>
+

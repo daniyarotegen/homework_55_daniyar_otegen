@@ -1,0 +1,52 @@
+[
+{
+  "model": "todo.task",
+  "pk": 34,
+  "fields": {
+    "description": "Wash dishes",
+    "details": "",
+    "status": "NEW",
+    "completion_date": "2023-02-23"
+  }
+},
+{
+  "model": "todo.task",
+  "pk": 35,
+  "fields": {
+    "description": "Buy groceries",
+    "details": "Buy fruits and vegetables from nearest grocery store",
+    "status": "IN_PROCESS",
+    "completion_date": "2023-02-25"
+  }
+},
+{
+  "model": "todo.task",
+  "pk": 36,
+  "fields": {
+    "description": "Make a call",
+    "details": "Make a call to my pal John about the upcoming trip to Nebraska",
+    "status": "COMPLETED",
+    "completion_date": "2023-02-15"
+  }
+},
+{
+  "model": "todo.task",
+  "pk": 37,
+  "fields": {
+    "description": "Clean my room",
+    "details": "Clean my room and take out the trash",
+    "status": "NEW",
+    "completion_date": "2023-02-26"
+  }
+},
+{
+  "model": "todo.task",
+  "pk": 38,
+  "fields": {
+    "description": "Do my homework",
+    "details": "Complete homework 55",
+    "status": "COMPLETED",
+    "completion_date": "2023-02-24"
+  }
+}
+]

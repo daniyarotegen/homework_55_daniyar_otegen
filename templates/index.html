@@ -7,18 +7,22 @@
 {% endblock %}
 
 {% block content %}
+    <h2 style="margin-top: 1rem">To Do List</h2>
     {% for task in tasks %}
         {% if task.status.title == 'New' %}
-            <div class="alert alert-danger" role="alert">
-                <a href="{% url 'task_detail' task.pk %}" class="alert-link" style="text-decoration: none; font-weight: normal">{% include 'tasks.html' %}</a>
+            <div class="alert alert-danger" role="alert" style="margin-top: 1rem">
+                <a href="{% url 'task_detail' task.pk %}" class="alert-link"
+                   style="text-decoration: none; font-weight: normal">{% include 'tasks.html' %}</a>
             </div>
         {% elif task.status.title == 'In_Process' %}
-            <div class="alert alert-warning" role="alert">
-                <a href="{% url 'task_detail' task.pk %}" class="alert-link" style="text-decoration: none; font-weight: normal">{% include 'tasks.html' %}</a>
+            <div class="alert alert-warning" role="alert" style="margin-top: 1rem">
+                <a href="{% url 'task_detail' task.pk %}" class="alert-link"
+                   style="text-decoration: none; font-weight: normal">{% include 'tasks.html' %}</a>
             </div>
         {% elif task.status.title == 'Completed' %}
-            <div class="alert alert-success" role="alert">
-                <a href="{% url 'task_detail' task.pk %}" class="alert-link" style="text-decoration: none; font-weight: normal">{% include 'tasks.html' %}</a>
+            <div class="alert alert-success" role="alert" style="margin-top: 1rem">
+                <a href="{% url 'task_detail' task.pk %}" class="alert-link"
+                   style="text-decoration: none; font-weight: normal">{% include 'tasks.html' %}</a>
             </div>
         {% endif %}
     {% endfor %}

@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
+{% block title %}
+    Create Task
+{% endblock %}
 {% block content %}
+    <h2 style="margin-top: 1rem">Create Task</h2>
     <div class="form">
         <form action="{% url 'task_add' %}" method="post">
             {% include 'partial/task_form.html' with button_text='Create' %}

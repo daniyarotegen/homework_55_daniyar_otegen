@@ -1,8 +1,7 @@
 from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import render, redirect, get_object_or_404
-
 from todo.forms import TaskForm, TaskDeleteForm
-from todo.models import Task, StatusChoice
+from todo.models import Task
 
 
 def index_view(request: WSGIRequest):
@@ -37,7 +36,7 @@ def update_view(request, pk):
     if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
-            task.description = form.cleaned_data['description']
+            task.description = form.clean_description()
             task.details = form.cleaned_data['details']
             task.status = form.cleaned_data['status']
             task.completion_date = form.cleaned_data['completion_date']
