@@ -12,7 +12,7 @@
             <div class="alert alert-danger" role="alert">
                 <a href="{% url 'task_detail' task.pk %}" class="alert-link" style="text-decoration: none; font-weight: normal">{% include 'tasks.html' %}</a>
             </div>
-        {% elif task.status.title == 'In Process' %}
+        {% elif task.status.title == 'In_Process' %}
             <div class="alert alert-warning" role="alert">
                 <a href="{% url 'task_detail' task.pk %}" class="alert-link" style="text-decoration: none; font-weight: normal">{% include 'tasks.html' %}</a>
             </div>

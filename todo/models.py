@@ -4,8 +4,8 @@ from django.db.models import TextChoices
 
 class StatusChoice(TextChoices):
     NEW = 'NEW', 'new'
-    COMPLETED = 'COMPLETED', 'completed'
     IN_PROCESS = 'IN_PROCESS', 'in process'
+    COMPLETED = 'COMPLETED', 'completed'
 
 
 class Task(models.Model):

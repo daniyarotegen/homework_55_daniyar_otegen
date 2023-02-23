@@ -26,3 +26,21 @@ class TaskForm(forms.Form):
         if len(description) < 2:
             raise ValidationError('Description must be longer than 2 symbols')
         return description
+
+
+class TaskDeleteForm(forms.Form):
+    tasks = forms.ModelMultipleChoiceField(queryset=Task.objects.all(), widget=forms.CheckboxSelectMultiple)
+
+    def init(self, *args, **kwargs):
+        super().init(*args, **kwargs)
+        self.fields['tasks'].queryset = Task.objects.all()
+
+    class Media:
+        css = {
+            'all': ('admin/css/forms.css',),
+        }
+        js = ('admin/js/core.js', 'admin/js/actions.js')
+
+    def save(self):
+        selected_tasks = self.cleaned_data['tasks']
+

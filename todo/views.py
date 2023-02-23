@@ -1,7 +1,7 @@
 from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import render, redirect, get_object_or_404
 
-from todo.forms import TaskForm
+from todo.forms import TaskForm, TaskDeleteForm
 from todo.models import Task, StatusChoice
 
 
@@ -62,3 +62,16 @@ def delete_view(request, pk):
         'task': task,
     }
     return render(request, 'task_delete.html', context)
+
+
+def mass_delete_view(request):
+    tasks = Task.objects.all()
+    if request.method == 'POST':
+        form = TaskDeleteForm(request.POST)
+        if form.is_valid():
+            selected_tasks = form.cleaned_data['tasks']
+            Task.objects.filter(pk__in=selected_tasks).delete()
+            return redirect('index')
+    else:
+        form = TaskDeleteForm()
+    return render(request, 'task_mass_delete.html', {'form': form, 'tasks': tasks})
